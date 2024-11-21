@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    restart: always
+    command: python daily_scraping_module.py
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+
+

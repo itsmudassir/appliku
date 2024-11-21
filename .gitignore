@@ -1,9 +1,24 @@
-env/
-.idea/
+# Ignore environment variable files
+.env
+.env.local
+.env.*.local
+
+# Ignore Python cache files
 __pycache__/
 *.py[cod]
-*$py.class
-.vscode/
+*.pyo
+
+# Ignore virtual environment folders
+venv/
+env/
+
+# Ignore Docker-related files
+*.log
+docker-compose.override.yml
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore system files
 .DS_Store
-.AppleDouble
-.LSOverride
+Thumbs.db
