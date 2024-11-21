@@ -92,20 +92,7 @@ class Session():
     def close(self):
         self.s.close()
 
-
-
-def setup_logging():
-    # Make logs dir if it doesnt exist.
-    Path('logs').mkdir(parents=True, exist_ok=True)
-    # Setup logging.
-    logging.basicConfig(
-        level=logging.INFO,
-        format = '',
-        handlers=[
-            RotatingFileHandler('logs/logs.log', mode='a', encoding='utf-8', maxBytes=1024*1024*100, backupCount=2),
-            logging.StreamHandler(sys.stdout)
-        ]    
-    )
+ 
 
 
 
@@ -160,8 +147,7 @@ async def worker(redis_client, key, session, proxy=None):
 
 
 async def main():
-    setup_logging()
-
+ 
     start_time = datetime.now()
     logging.info(f'\nStart Time: {start_time}')
 
