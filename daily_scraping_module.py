@@ -135,6 +135,7 @@ async def worker(redis_client, key, session, proxy=None):
     product_buffer = []
     while True:
         product_urls = await get_urls(redis_client, key, URLS_PER_BATCH)
+        print("urls loaded ",len(product_urls))
         if not product_urls:
             break
         

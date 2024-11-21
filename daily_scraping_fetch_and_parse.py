@@ -38,6 +38,7 @@ s3 = boto3.client(
 
 
 def upload_to_s3(sanitized_products):
+    print(sanitized_products)
     if not sanitized_products:
         return  # Avoid uploading an empty list
 
